@@ -294,7 +294,7 @@ Transform:
   m_GameObject: {fileID: 1110756808}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 1698067727}
   - component: {fileID: 1698067730}
   - component: {fileID: 1698067731}
+  - component: {fileID: 1698067732}
   m_Layer: 0
   m_Name: Green Bird
   m_TagString: Untagged
@@ -673,6 +674,18 @@ PolygonCollider2D:
       - {x: -0.42999998, y: -2.53}
       - {x: -0.29, y: -2.56}
   m_UseDelaunayMesh: 0
+--- !u!114 &1698067732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698067726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d849f15f1169d94a9234caf5841af24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
