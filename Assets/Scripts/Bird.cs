@@ -34,6 +34,8 @@ public class Bird : MonoBehaviour
         GetComponent <SpriteRenderer>().color = Color.green;
         Vector2 directionToInitialPosition = _initialPosition - transform.position;
         GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition * _launchPower);
+
+        // gravity scale is zero before launching the Bird (AddForce)  and after launch it should be 1 to look like projectile motion
         GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 
