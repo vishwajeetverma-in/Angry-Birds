@@ -19,6 +19,8 @@ public class Bird : MonoBehaviour
     private void OnMouseUp()
     {
         GetComponent <SpriteRenderer>().color = Color.green;
+        Vector2 directionToInitialPosition = _initialPosition - transform.position;
+        GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition );
     }
 
     private void OnMouseDrag()
