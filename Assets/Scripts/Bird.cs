@@ -7,7 +7,7 @@ public class Bird : MonoBehaviour
 {
     Vector3 _initialPosition;
 
-    [SerializeField] float _launchPower = 500;
+    [SerializeField] float _launchPower;
 
     private void Awake()
     {
@@ -16,7 +16,7 @@ public class Bird : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y > 10f)
+        if (transform.position.y > 10f || transform.position.y < -10f || transform.position.x > 10f || transform.position.x < -10f)
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(currentSceneName);
