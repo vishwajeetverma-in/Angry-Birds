@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Bird : MonoBehaviour
 {
     Vector3 _initialPosition;
-    private float _launchPower = 500;
+
+    [SerializeField] float _launchPower = 500;
 
     private void Awake()
     {
