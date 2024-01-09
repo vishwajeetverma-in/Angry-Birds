@@ -23,7 +23,9 @@ public class Enemy : MonoBehaviour
         }
 
         // other than bird and enemy means crushed by crate
-       if (collision.contacts[0].normal.y < -0.5
+
+       if (collision.contacts[0].normal.y < -0.5    // contacts is an array with which script is colliding, zero means first contact jiske sath hua hai
+                                                    // normal meaning upar se hit hua h ya side se meaning direction of hit
 )
         {
             Destroy(gameObject );
