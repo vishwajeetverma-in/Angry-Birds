@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private GameObject _cloudParticlePrefab;
     // if enemy has collided with enemy or bird or any other thing
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
          // if the other object is having a BIRD component then destroy the enemy
-       Bird bird = collision.collider.GetComponent<Bird>();
+
+        Bird bird = collision.collider.GetComponent<Bird>();
+
         if (bird != null)
         {
+            Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
             return;   // becauses once enemy is destroyed no need to check anything because anyway enemy.cs will be destroyed also
         }
+
 
         // if hit is with ENEMY dont do anything just dont do anything
         Enemy enemy = collision.collider.GetComponent<Enemy>();
@@ -28,6 +35,7 @@ public class Enemy : MonoBehaviour
                                                     // normal meaning upar se hit hua h ya side se meaning direction of hit
 )
         {
+            Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
             Destroy(gameObject );
         }
     }
