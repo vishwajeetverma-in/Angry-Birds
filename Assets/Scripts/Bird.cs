@@ -22,11 +22,11 @@ public class Bird : MonoBehaviour
          // bird will go towards initialposition
         GetComponent<LineRenderer>().SetPosition(0 , transform.position);
         GetComponent<LineRenderer>().SetPosition(1, _initialPosition);
-        if (_birdWasLaunched && GetComponent<Rigidbody2D>().velocity.magnitude <= 0)
+        if (_birdWasLaunched && GetComponent<Rigidbody2D>().velocity.magnitude <= 0.1f)
         {
             _timeSittingAround += Time.deltaTime;
         }
-        if (transform.position.y > 10f || transform.position.y < -10f || transform.position.x > 10f || transform.position.x < -10f || _timeSittingAround > 2f)
+        if (transform.position.y > 20f || transform.position.y < -20f || transform.position.x > 20f || transform.position.x < -20f || _timeSittingAround > 2f)
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(currentSceneName);
