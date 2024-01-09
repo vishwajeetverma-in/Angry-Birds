@@ -19,8 +19,9 @@ public class Bird : MonoBehaviour
 
     private void Update()
     {
-        GetComponent<LineRenderer>().SetPosition(0 , _initialPosition);
-        GetComponent<LineRenderer>().SetPosition(1, transform.position);
+         // bird will go towards initialposition
+        GetComponent<LineRenderer>().SetPosition(0 , transform.position);
+        GetComponent<LineRenderer>().SetPosition(1, _initialPosition);
         if (_birdWasLaunched && GetComponent<Rigidbody2D>().velocity.magnitude <= 0)
         {
             _timeSittingAround += Time.deltaTime;
