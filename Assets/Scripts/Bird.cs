@@ -36,6 +36,7 @@ public class Bird : MonoBehaviour
     private void OnMouseDown()
     {
         GetComponent<SpriteRenderer>().color = Color.red;
+        GetComponent<LineRenderer>().enabled = true;
         
     }
 
@@ -49,6 +50,7 @@ public class Bird : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 1;
         // signal to start the counter
         _birdWasLaunched = true;
+        GetComponent<LineRenderer>().enabled = false;
 
     }
 
