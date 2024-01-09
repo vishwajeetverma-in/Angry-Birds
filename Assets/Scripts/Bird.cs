@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class Bird : MonoBehaviour
 {
     Vector3 _initialPosition;
+    private bool _birdWasLaunched;
+    private float _timeSittingAround;
 
     [SerializeField] float _launchPower;
+    
 
     private void Awake()
     {
@@ -16,12 +19,17 @@ public class Bird : MonoBehaviour
 
     private void Update()
     {
-        if (transform.position.y > 10f || transform.position.y < -10f || transform.position.x > 10f || transform.position.x < -10f)
+        if (_birdWasLaunched && GetComponent<Rigidbody2D>().velocity.magnitude <= 0)
+        {
+            _timeSittingAround += Time.deltaTime;
+        }
+        if (transform.position.y > 10f || transform.position.y < -10f || transform.position.x > 10f || transform.position.x < -10f || _timeSittingAround > 3f)
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene(currentSceneName);
             
         }
+        
     }
     private void OnMouseDown()
     {
@@ -37,6 +45,9 @@ public class Bird : MonoBehaviour
 
         // gravity scale is zero before launching the Bird (AddForce)  and after launch it should be 1 to look like projectile motion
         GetComponent<Rigidbody2D>().gravityScale = 1;
+        // signal to start the counter
+        _birdWasLaunched = true;
+
     }
 
     private void OnMouseDrag()
